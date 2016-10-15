@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CH Customs Calculator</title>
+	<link rel="stylesheet" type="text/css" href="view.css" media="all">
+	<script type="text/javascript" src="view.js"></script>
+	<script type="text/javascript" src="calendar.js"></script>
+	<script type="text/javascript" src="chzoll.js"></script>
+</head>
+<body id="main_body" >
+	
+	<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	
+		<h1><a>CH ZOLL - Travel and customs details</a></h1>
+		<form id="form_1164254" class="appnitro"  method="post" action="">
+					<div class="form_description">
+			<h2>CH ZOLL - Travel and customs details</h2>
+			<p>Please enter the details for your next customs calculation.</p>
+		</div>						
+			<ul >
+			
+					<li id="li_5" >
+		<label class="description" for="element_from">From </label>
+		<div>
+		<select class="element select medium" id="element_from" name="element_from"> 
+			<option value="1" >Switzerland</option>
+<option value="2" selected="selected">Germany</option>
+<option value="3" >Austria</option>
+<option value="4" >France</option>
+<option value="5" >Italy</option>
+<option value="6" >Other(EU)</option>
+<option value="7" >Other(non-EU)</option>
+
+		</select>
+		</div><p class="guidelines" id="guide_5"><small>Your departure country.</small></p> 
+		</li>		<li id="li_6" >
+		<label class="description" for="element_to">To </label>
+		<div>
+		<select class="element select medium" id="element_to" name="element_to"> 
+			<option value="1" selected="selected">Switzerland</option>
+<option value="2" >Germany</option>
+<option value="3" >Austria</option>
+<option value="4" >France</option>
+<option value="5" >Italy</option>
+<option value="6" >Other(EU)</option>
+<option value="7" >Other(non-EU)</option>
+
+		</select>
+		</div><p class="guidelines" id="guide_6"><small>Your arrival country.</small></p> 
+		</li>		<li id="li_3" >
+		<label class="description" for="element_date">Date </label>
+		<span>
+	 		<input id="element_date_3" name="element_date_3" class="element text" size="4" maxlength="4" value="" type="text">
+			<label for="element_date_3">YYYY</label>
+		</span>		
+		<span>
+			<input id="element_date_1" name="element_date_1" class="element text" size="2" maxlength="2" value="" type="text"> -
+			<label for="element_date_1">MM</label>
+		</span>
+		<span>
+			<input id="element_date_2" name="element_date_2" class="element text" size="2" maxlength="2" value="" type="text"> -
+			<label for="element_date_2">DD</label>
+		</span>
+
+	
+		<span id="calendar_3">
+			<img id="cal_img_3" class="datepicker" src="calendar.gif" alt="Pick a date.">	
+		</span>
+		<script type="text/javascript">
+			Calendar.setup({
+			inputField	 : "element_date_3",
+			baseField    : "element_date",
+			displayArea  : "calendar_3",
+			button		 : "cal_img_3",
+			ifFormat	 : "%B %e, %Y",
+			onSelect	 : selectDate
+			});
+		</script>
+		<p class="guidelines" id="guide_3"><small>Date of entry.</small></p> 
+		</li>		<li id="li_4" >
+		<label class="description" for="element_people">Number of importers </label>
+		<div>
+		<select class="element select medium" id="element_people" name="element_people"> 
+<option value="1" selected="selected">1 person</option>
+<option value="2" >2 people</option>
+
+		</select>
+		</div><p class="guidelines" id="guide_4"><small>How many people are entering customs together?</small></p> 
+		</li>
+
+<li id="li_5" >
+		<label class="description" for="element_items">Imported items</label>
+		<div>
+		<select class="element select medium" id="element_items" name="element_items"> 
+			<option value="" selected="selected"></option>
+<option value="pork" >pork (kg)</option>
+<option value="butter" >butter (kg)</option>
+<option value="cream" >cream (kg)</option>
+<option value="olive oil" >olive oil (l)</option>
+<option value="fat" >fat (l)</option>
+<option value="beer" >beer (l)</option>
+<option value="wine" >wine (l)</option>
+<option value="vodka" >vodka (l)</option>
+<option value="rum" >rum (l)</option>
+<option value="cigarette (box)" >cigarette (box)</option>
+<option value="snus" >snus (grams)</option>
+<option value="crossbow" >crossbow pcs</option>
+<option value="cake" >cake (piece)</option>
+		
+		</select> <br />Amount:
+		<input id="element_amount" name="element_amount" class="element number small" type="number" step="any" min="0" style="width:5" maxlength="255" value=""/> <button type="button" onclick="addClick()"><big>Add</big></button>
+		</div><p class="guidelines" id="guide_4"><small>Select an item and amount to add</small></p> 
+		</li>
+		
+	<div id="productlistdiv">
+		<br />
+		<div id="productliststartmessage">
+			<ul><li><large>No items added yet!</large></li></ul>
+		</div>
+		<ul id="productlistul">
+			
+		</ul>
+				<br /	
+	</div>		
+			
+		<li class="buttons">
+			    <input type="hidden" name="form_id" value="1164254" />
+			    <button type="button" onclick="calcClick()"><big>Calculate</big></button>
+			    <button type="button" onclick="sampleClick()"><big>Sample</big></button>
+			    <button type="button" onclick="resetClick()"><big>Empty Basket</big></button>
+		</li>
+			</ul>
+		</form>	
+	<div id="results" name="results" style="margin-left:20px; margin-right:20px">
+		
+	</div>
+
+	<br />
+		<br />
+			<br />
+
+
+	</div>
+<script type="text/javascript">
+	zollStart();
+</script>
+	
+
+	
+</body>
+	
+	
+	
