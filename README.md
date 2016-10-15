@@ -4,7 +4,7 @@ Contribution for ELCAthon @ 2016 by our team: Fast Food.
 
 # Overview
 
-See our [presentation]() for details about the idea of the app CH Zoll.
+See our presentation for details about the idea of the app CH Zoll.
 
 # How to
 
